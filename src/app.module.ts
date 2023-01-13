@@ -1,3 +1,4 @@
+import { MesoRegion } from './integrations/ibge/counties/entities/mesoRegion.entity';
 import { MicroRegion } from './integrations/ibge/counties/entities/microRegion.entity';
 import { County } from './integrations/ibge/counties/entities/county.entity';
 import { CountiesModule } from './integrations/ibge/counties/counties.module';
@@ -13,7 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: [Product, County, MicroRegion],
+      entities: [Product, County, MicroRegion, MesoRegion],
       synchronize: true,
     }),
     ProductsModule,

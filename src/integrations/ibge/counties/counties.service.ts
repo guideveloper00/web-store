@@ -1,3 +1,4 @@
+import { MesoRegion } from './entities/mesoRegion.entity';
 import { MicroRegion } from './entities/microRegion.entity';
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
@@ -11,6 +12,8 @@ export class CountiesService {
     @InjectRepository(County) private repoCounty: Repository<County>,
     @InjectRepository(MicroRegion)
     private repoMicroRegion: Repository<MicroRegion>,
+    @InjectRepository(MesoRegion)
+    private repoMesoRegion: Repository<MesoRegion>,
   ) {}
 
   async findAllCounties() {
@@ -33,12 +36,21 @@ export class CountiesService {
       nome: countyParams.microrregiao.nome,
     });
 
+    const mesorregiao = this.repoMesoRegion.create({
+      id: countyParams.microrregiao.mesorregiao.id,
+      nome: countyParams.microrregiao.mesorregiao.nome,
+    });
+
     county.microrregionId = microrregiao.id;
     county.microrregiao = microrregiao;
 
-    console.log(county);
+    microrregiao.mesorregionId = mesorregiao.id;
+    microrregiao.mesorregiao = mesorregiao;
+
+    console.log(mesorregiao);
 
     await this.repoCounty.save(county);
     await this.repoMicroRegion.save(microrregiao);
+    await this.repoMesoRegion.save(mesorregiao);
   }
 }
