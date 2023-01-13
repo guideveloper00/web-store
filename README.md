@@ -1,3 +1,6 @@
+1# Rodar npm i no terminal para baixar as dependencias
+2# npm run start:dev
+
 Código criado em NestJs, o banco de dados fica no arquivo db.sqlite, para visualizar os dados é necessario: abrir a view (ferramenta) -> command palette -> SQLite: Open Database -> db.sqlite
 
 ![image](https://user-images.githubusercontent.com/47352737/212073658-4de057ba-c537-4ad2-aff0-7dbd5c871692.png)
