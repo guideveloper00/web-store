@@ -33,6 +33,7 @@ export class CountiesService {
       nome: countyParams.microrregiao.nome,
     });
 
+    county.microrregionId = microrregiao.id;
     county.microrregiao = microrregiao;
 
     console.log(county);

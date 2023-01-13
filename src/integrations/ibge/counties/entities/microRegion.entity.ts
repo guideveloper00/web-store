@@ -1,11 +1,4 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  PrimaryGeneratedColumn,
-  OneToMany,
-  OneToOne,
-} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
 import { County } from './county.entity';
 
 @Entity()
