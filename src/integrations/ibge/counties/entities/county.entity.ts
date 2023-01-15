@@ -1,5 +1,4 @@
-import { MicroRegion } from './microRegion.entity';
-import { Column, Entity, OneToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class County {
@@ -8,10 +7,4 @@ export class County {
 
   @Column()
   nome: string;
-
-  @Column()
-  microrregionId: number;
-
-  @OneToOne(() => MicroRegion, (microrregiao) => microrregiao.county)
-  microrregiao: MicroRegion;
 }
